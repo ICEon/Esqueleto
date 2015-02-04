@@ -22,13 +22,16 @@
    <preference name="fullscreen"         value="true" />      
    <preference name="android-installLocation"  value="auto" />  
 
+<preference name="SplashScreen" value="foo" />
+
+<preference name="SplashScreenDelay" value="10000" />
    <!-- Plugins -->  
    <!-- Core plugins -->  
 
    <gap:plugin name="org.apache.cordova.dialogs" />  
    <gap:plugin name="org.apache.cordova.file" />  
    <gap:plugin name="org.apache.cordova.file-transfer" />  
-   <gap:plugin name="org.apache.cordova.splashscreen" />  
+   <gap:plugin name="org.apache.cordova.splashscreen" version="0.3.4" />  
    <gap:plugin name="org.apache.cordova.vibration" />  
 
    <!-- Third party plugins -->  
