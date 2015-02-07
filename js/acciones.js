@@ -87,7 +87,7 @@ alert(resultado.rows.length);
 	 a_html += "</ul>";
 	 
 	 var $contenido = $("#preguntas");
-     $contenido.html (a_html);
+     $contenido.append (a_html);
      var $ul = $contenido.find ("ul");
      $ul.listview ();
 	 alert (a_html);
