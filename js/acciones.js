@@ -63,7 +63,8 @@ document.addEventListener( 'deviceready', function() {
 
 });
 
-$('#play').bind('click', function (){
+$('#jugar').bind('click', function (){
+	alert('play');
   db.transaction (function (ejecutar){
    var sql = "SELECT * FROM Preguntas";
    ejecutar.executeSql (sql, undefined,
@@ -71,7 +72,7 @@ $('#play').bind('click', function (){
 
     if (resultado.rows.length)
      {
-      var fila = resultado.rows.item (i);
+      var fila = resultado.rows.item (0);
       var a_html = "<h3>"+fila.Pregunta+"</h3> <br> <ul>";        
       var Res1 = fila.R1;
       var Res2 = fila.R2;
