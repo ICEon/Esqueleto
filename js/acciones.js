@@ -1,7 +1,7 @@
 // JavaScript Document
 $(document).ready(function(e) {
 	var Respuestas=[];
-	var RespuestasO = []
+	var RespuestasO = ["","","",""]
 	var Continuar = true;
 	
 document.addEventListener( 'deviceready', function() {
@@ -81,7 +81,7 @@ alert(resultado.rows.length);
       Respuestas [0] = fila.R1;
 	  Respuestas [1] = fila.R2;
 	  Respuestas [2] = fila.R3;
-	  
+	 
 	  
 	  var orden = Math.floor((Math.random() * 4) + 1) - 1;
 	  alert ("Correcta " + orden);
@@ -94,7 +94,7 @@ for (var i = 0; i < 3; i++)
    orden = Math.floor((Math.random() * 4) + 1) - 1;
    alert ("donde " + orden + "->" + RespuestasO [orden] + "<-");
 
-	if (RespuestasO [orden] == 'undefined')
+	if (RespuestasO [orden] == "")
 	 {
 		 alert ("dentro");
 	  RespuestasO[orden] = Respuestas[i];
