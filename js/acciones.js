@@ -92,7 +92,8 @@ for (var i = 0; i < 3; i++)
   while (Continuar)
   {
    orden = Math.floor((Math.random() * 4) + 1) - 1;
-   alert ("donde " + orden);
+   alert ("donde " + orden + "->" + RespuestasO [orden] + "<-");
+   
 	if (RespuestasO [orden] == "")
 	 {
 		 alert ("dentro");
