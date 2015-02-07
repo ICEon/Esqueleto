@@ -1,6 +1,8 @@
 // JavaScript Document
 $(document).ready(function(e) {
-	
+	var Respuestas=[];
+	var RespuestasO = []
+	var Continuar = true;
 	
 document.addEventListener( 'deviceready', function() {
 //alert ("ready");
@@ -70,19 +72,46 @@ $('#jugar').bind('click', function (){
    var sql = "SELECT * FROM Preguntas";
    ejecutar.executeSql (sql, undefined,
    function (ejecutar, resultado){
+
 alert(resultado.rows.length);
+
     if (resultado.rows.length)
      {
       var fila = resultado.rows.item (0);
-      var a_html = "<h3>"+fila.Pregunta+"</h3> <br> <ul>";        
-      var Res1 = fila.R1;
-      var Res2 = fila.R2;
-	  var Res3 = fila.R3;
-      var ResC = fila.RC;
+      Respuestas [0] = fila.R1;
+	  Respuestas [1] = fila.R2;
+	  Respuestas [2] = fila.R3;
+	  
+	  
+	  var orden = Math.floor((Math.random() * 4) + 1) - 1;
+	  RespuestaO [orden] = fila.RC;
+	  
+for (var i = 0; i < 4; i++)
+{
+  while (Continuar)
+  {
+   orden = Math.floor((Math.random() * 4) + 1) - 1;
+	if (RespuestasO [orden] == "")
+	 {
+	  RespuestasO[Orden] = Respuestas[i];
+	  Continuar = false;
+	 }
+
+  }
+  Continuar = true;
+}
+	  
+	  
+	  
+	  var a_html = "<h3>"+fila.Pregunta+"</h3> <br> <ul>";        
+      var Res1 = RespuestasO[0];
+      var Res2 = RespuestasO[1];
+	  var Res3 = RespuestasO[2];
+      var Res4 = RespuestasO[3];
       a_html += "<li>" + Res1 + "</li>";
       a_html += "<li>" + Res2 + "</li>";
       a_html += "<li>" + Res3 + "</li>";
-      a_html += "<li>" + ResC + "</li>";				  
+      a_html += "<li>" + Res4 + "</li>";				  
      }
 	 a_html += "</ul>";
 	 
