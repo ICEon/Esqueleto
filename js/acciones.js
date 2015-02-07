@@ -93,8 +93,8 @@ for (var i = 0; i < 3; i++)
   {
    orden = Math.floor((Math.random() * 4) + 1) - 1;
    alert ("donde " + orden + "->" + RespuestasO [orden] + "<-");
-   
-	if (RespuestasO [orden] == "")
+
+	if (RespuestasO [orden] == 'undefined')
 	 {
 		 alert ("dentro");
 	  RespuestasO[orden] = Respuestas[i];
