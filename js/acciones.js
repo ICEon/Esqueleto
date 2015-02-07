@@ -8,7 +8,9 @@ alert ("ready");
 
 	
 
-
+$( '#principal' ).live( 'pagecreate',function(event){
+alert ("alive");
+});
 		
 	$(document).on("pageshow","#principal",function(event){
 		alert ("dentro");
