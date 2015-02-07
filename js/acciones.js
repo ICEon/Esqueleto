@@ -89,6 +89,7 @@ $('#jugar').bind('click', function (){
      $contenido.html (a_html);
      var $ul = $contenido.find ("ul");
      $ul.listview ();
+	 alert (a_html);
     });
    });
   });
