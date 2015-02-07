@@ -84,13 +84,15 @@ alert(resultado.rows.length);
 	  
 	  
 	  var orden = Math.floor((Math.random() * 4) + 1) - 1;
-	  RespuestaO [orden] = fila.RC;
+	  alert ("Correcta " + orden);
+	  RespuestasO [orden] = fila.RC;
 	  
 for (var i = 0; i < 4; i++)
 {
   while (Continuar)
   {
    orden = Math.floor((Math.random() * 4) + 1) - 1;
+   alert ("donde " + orden);
 	if (RespuestasO [orden] == "")
 	 {
 	  RespuestasO[Orden] = Respuestas[i];
