@@ -70,7 +70,7 @@ $('#jugar').bind('click', function (){
    var sql = "SELECT * FROM Preguntas";
    ejecutar.executeSql (sql, undefined,
    function (ejecutar, resultado){
-resultado.rows.length
+alert(resultado.rows.length);
     if (resultado.rows.length)
      {
       var fila = resultado.rows.item (0);
