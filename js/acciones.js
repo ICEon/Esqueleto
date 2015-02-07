@@ -7,7 +7,7 @@ document.addEventListener("deviceready", function() {
 
 
 		
-	$(document).on("pagecreate","#principal",function(event){
+	$(document).on("pageshow","#principal",function(event){
 		alert ("dentro");
                   $("#popupNombre", $(this)).popup("open");
 			//	  alert ("fuera");
