@@ -13,7 +13,7 @@ document.addEventListener( 'deviceready', function() {
 
     db.transaction (function (transaction)
      {
-      var sql = "CREATE TABLE IF NO EXIST Puntajes " +
+      var sql = "CREATE TABLE IF NOT EXIST Puntajes " +
       " (Usuario, " +
       "Puntaje NOT NULL, " +
       "Fecha NOT NULL)";
@@ -25,7 +25,7 @@ document.addEventListener( 'deviceready', function() {
 
      db.transaction (function (transaction)
       {
-       var sql = "CREATE TABLE IF NO EXIST Usuario " +
+       var sql = "CREATE TABLE IF NOT EXIST Usuario " +
        "(Nombre)";
        transaction.executeSql (sql, undefined, function ()
         {
@@ -36,7 +36,7 @@ document.addEventListener( 'deviceready', function() {
 
      db.transaction (function (transaction)
       {
-       var sql = "CREATE TABLE IF NO EXIST Preguntas " +
+       var sql = "CREATE TABLE IF NOT EXIST Preguntas " +
        " (CvePregunta INTEGER NOT NULL UNIQUE, " +
        "Pregunta NOT NULL, " +
        "R1 NOT NULL, " +
