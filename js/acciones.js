@@ -73,7 +73,7 @@ $('#jugar').bind('click', function (){
    ejecutar.executeSql (sql, undefined,
    function (ejecutar, resultado){
 
-alert(resultado.rows.length);
+//alert(resultado.rows.length);
 
     if (resultado.rows.length)
      {
@@ -92,11 +92,11 @@ for (var i = 0; i < 3; i++)
   while (Continuar)
   {
    orden = Math.floor((Math.random() * 4) + 1) - 1;
-   alert ("donde " + orden + "->" + RespuestasO [orden] + "<-");
+  // alert ("donde " + orden + "->" + RespuestasO [orden] + "<-");
 
 	if (RespuestasO [orden] == "")
 	 {
-		 alert ("dentro");
+	//	 alert ("dentro");
 	  RespuestasO[orden] = Respuestas[i];
 	  Continuar = false;
 	 }
