@@ -87,7 +87,7 @@ alert(resultado.rows.length);
 	  alert ("Correcta " + orden);
 	  RespuestasO [orden] = fila.RC;
 	  
-for (var i = 0; i < 4; i++)
+for (var i = 0; i < 3; i++)
 {
   while (Continuar)
   {
