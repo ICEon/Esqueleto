@@ -64,12 +64,13 @@ document.addEventListener( 'deviceready', function() {
 });
 
 $('#jugar').bind('click', function (){
-	alert('play');
+	
   db.transaction (function (ejecutar){
+	  alert('play');
    var sql = "SELECT * FROM Preguntas";
    ejecutar.executeSql (sql, undefined,
    function (ejecutar, resultado){
-
+resultado.rows.length
     if (resultado.rows.length)
      {
       var fila = resultado.rows.item (0);
