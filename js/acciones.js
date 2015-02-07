@@ -95,7 +95,8 @@ for (var i = 0; i < 4; i++)
    alert ("donde " + orden);
 	if (RespuestasO [orden] == "")
 	 {
-	  RespuestasO[Orden] = Respuestas[i];
+		 alert ("dentro");
+	  RespuestasO[orden] = Respuestas[i];
 	  Continuar = false;
 	 }
 
