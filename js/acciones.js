@@ -66,7 +66,7 @@ document.addEventListener( 'deviceready', function() {
 });
 
 $('#jugar').bind('click', function (){
-	
+	RespuestasO = ["","","",""];
   db.transaction (function (ejecutar){
 	  alert('play');
    var sql = "SELECT * FROM Preguntas";
