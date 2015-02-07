@@ -24,7 +24,15 @@
           <h1>Mi Aplicacion</h1>       
         </div>        
         <div data-role="main" class="ui-content">
-          Content
+<div data-role="popup" id="popupNombre" data-theme="a" class="ui-corner-all">
+ <form>
+ <div>
+  <h3> Escribe tu nombre </h3>
+  <label for="TxtNombre" class="ui-hidden-accessible">Nombre:</label>
+  <input type="text" name="Usuario" id="TxtNombre" value="" placeholder="Nombre" data-theme="a">
+  <button type="submit" class="ui-btn ui-corner-all ui-shadow ui-btn-b ui-btn-icon-left ui-icon-check" >Aceptar</button>
+ </div>
+ </form>
         </div>    
         <div data-role="footer" data-position="fixed">
           <h4>Pie</h4>     
