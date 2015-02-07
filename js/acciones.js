@@ -7,9 +7,9 @@ function onDeviceReady() {
 
 		
 	$(document).on("pagecreate", function(event) {
-		alert ("dentro");
+		//alert ("dentro");
                   $("#popupNombre", $(this)).popup("open");
-				  alert ("fuera");
+			//	  alert ("fuera");
                 });
     // Now safe to use device APIs
 	
