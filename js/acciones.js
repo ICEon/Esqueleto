@@ -1,11 +1,12 @@
 // JavaScript Document
 $(document).ready(function(e) {
-
-document.addEventListener("deviceready", function() {
-
-	$(document).on("pageshow",function(event){
+$(document).on("pageshow",function(event){
 		alert ("dos2");
 	});
+document.addEventListener("deviceready", function() {
+alert ("ready");
+
+	
 
 
 		
