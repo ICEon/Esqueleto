@@ -1,6 +1,6 @@
 // JavaScript Document
 $(document).ready(function(e) {
-$(document).on("pageshow",function(event){
+$(document).on("pageshow","#principal",function(event){
 		alert ("dos2");
 	});
 document.addEventListener("deviceready", function() {
