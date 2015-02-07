@@ -59,7 +59,7 @@ document.addEventListener( 'deviceready', function() {
 
 	db.transaction(function (tx) {
 		   tx.executeSql('INSERT INTO Usuario (Nobre) VALUES ("ICEon")');
-   tx.executeSql('INSERT INTO Preguntas (CvePregunta, Preguunta, R1, R2, R3, RC, Modulo) VALUES (1, "¿Que es HTML?", "No se", "Super", "Lenguaje de programacion", "Hypertext Markup Lenguage", 3)');
+   tx.executeSql('INSERT INTO Preguntas (CvePregunta, Preguunta, R1, R2, R3, RC, Modulo) VALUES (1, "Que es HTML", "No se", "Super", "Lenguaje de programacion", "Hypertext Markup Lenguage", 3)');
 
 });
 
