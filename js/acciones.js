@@ -1,10 +1,39 @@
 // JavaScript Document
+
+    
 $(document).ready(function(e) {
+
+//$('#logo').css({"width": $('#principal').width()/2, "height": "auto"});;	
+	
+$("#respuesta3").addClass("correcta");
+
 	var Respuestas=[];
 	var RespuestasO = ["","","",""]
 	var Continuar = true;
+
 	
+	
+	$('#liga').click(function(){
+    $('html, body').animate({
+        scrollTop: $( $(this).attr('href') ).offset().top
+    }, 700);
+    return false;
+});
+	
+$(".correcta").click(function(){
+        //$('.resp').buttonMarkup({ icon: "delete" });
+	    //$(this).buttonMarkup({ icon: "check" });
+	
+});
+
+$('.resp').click(function(e){
+ $(".correcta").css('background-color', '#87D658');
+});
+
+
+//$('#R1').css('height', $('#respuesta').css('height'));
 document.addEventListener( 'deviceready', function() {
+
 //alert ("ready");
 
 	//$(document).on('pagebeforecreate','#principal',function(e){
