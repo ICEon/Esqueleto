@@ -6,6 +6,36 @@ $('.logotipo').css({"width": $('#principal').width()*.28 , "height": 'auto'});
 
 $(document).ready(function(e) {
 
+function genera_pregunta(numero)
+{
+      Respuestas [0] = Preguntas [numero]['resp1'];
+	  Respuestas [1] = Preguntas [numero]['resp2']
+	  Respuestas [2] = Preguntas [numero]['resp2']
+	 
+	  
+	  var orden = Math.floor((Math.random() * 4) + 1) - 1;
+
+	  RespuestasO [orden] = Preguntas [numero]['respc'];
+	  
+for (var i = 0; i < 3; i++)
+{
+  while (Continuar)
+  {
+   orden = Math.floor((Math.random() * 4) + 1) - 1;
+  // alert ("donde " + orden + "->" + RespuestasO [orden] + "<-");
+
+	if (RespuestasO [orden] == "")
+	 {
+	//	 alert ("dentro");
+	  RespuestasO[orden] = Respuestas[i];
+	  Continuar = false;
+	 }
+
+  }
+  Continuar = true;
+}
+}
+
 function question(cve,preg,resp1,resp2,resp3,respc)
 {
  this.cve = cve;
@@ -134,7 +164,7 @@ document.addEventListener( 'deviceready', function() {
 $('.jugart').bind('click', function (){
  cuantas = 0;
 	RespuestasO = ["","","",""];
-	PreguntasO = ["","","","","","",""];
+
 	
   db.transaction (function (ejecutar){
    var sql = "SELECT * FROM Preguntas";
@@ -148,64 +178,25 @@ for (var x = 0; x < resultado.rows.length ; x++)
 	var filaP = resultado.rows.item (x)
   Preguntas.push (new question(filaP.CvePregunta, filaP.Pregunta, filaP.R1, filaP.R2, filaP.R3, filaP.RC));
  //( new question(filaP.CvePregunta,filaP.Pregunta, filaP.R1,filaP.R2, filaP.R3.);	
-
-
-
-
-
-
 }
 
 
-      alert (Preguntas [0]['cve']);
-	        alert (Preguntas [0]['preg']);
-	  
-/*      Respuestas [0] = fila.R1;
-	  Respuestas [1] = fila.R2;
-	  Respuestas [2] = fila.R3;
-	 
-	  
-	  var orden = Math.floor((Math.random() * 4) + 1) - 1;
-	  alert ("Correcta " + orden);
-	  RespuestasO [orden] = fila.RC;
-	  
-for (var i = 0; i < 3; i++)
-{
-  while (Continuar)
-  {
-   orden = Math.floor((Math.random() * 4) + 1) - 1;
-  // alert ("donde " + orden + "->" + RespuestasO [orden] + "<-");
 
-	if (RespuestasO [orden] == "")
-	 {
-	//	 alert ("dentro");
-	  RespuestasO[orden] = Respuestas[i];
-	  Continuar = false;
-	 }
-
-  }
-  Continuar = true;
-}
-	  
-	  
-	  
-	  var a_html = "<h3>"+fila.Pregunta+"</h3> <br> <ul>";        
+$('#pregunta p').text(Preguntas [0]['preg']);
+$('#respuesta1').text(Preguntas [0]['resp1']);
+$('#respuesta2').text(Preguntas [0]['resp2']);
+$('#respuesta3').text(Preguntas [0]['resp3']);
+$('#respuesta4').text(Preguntas [0]['respc']);	  
+/*genera_pregunta(cuantas);
       var Res1 = RespuestasO[0];
       var Res2 = RespuestasO[1];
 	  var Res3 = RespuestasO[2];
       var Res4 = RespuestasO[3];
-      a_html += "<li>" + Res1 + "</li>";
-      a_html += "<li>" + Res2 + "</li>";
-      a_html += "<li>" + Res3 + "</li>";
-      a_html += "<li>" + Res4 + "</li>";				  
+	  alert (Res1);	  
+	  alert (Res2);
+	  alert (Res3);
+	  alert (Res4);*/
 
-	 a_html += "</ul>";
-	 
-	 var $contenido = $("#preguntas");
-     $contenido.append (a_html);
-     var $ul = $contenido.find ("ul");
-     $ul.listview ();
-	 alert (a_html);*/
     });
    });
   });
