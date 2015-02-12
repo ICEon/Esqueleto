@@ -14,3 +14,24 @@
         overflow: auto;
         -webkit-overflow-scrolling: touch;
     }
+	
+	.wrap {
+    white-space: normal !important;
+}
+
+
+.ui-icon-noaudio:after {
+	background-image: url("../images/icons-png/no-audio-white.png");
+	    background-size: 18px 18px;
+}
+	
+ .ui-alt-icon.ui-icon-noaudio:after,
+ .ui-alt-icon .ui-icon-noaudio:after {
+	background-image: url("../images/icons-png/no-audio-black.png");
+	background-size: 18px 18px;
+		
+}
+
+.ui-btn.my-tooltip-btn, .ui-btn.my-tooltip-btn:hover, .ui-btn.my-tooltip-btn:active {
+background:  none;
+border:  0;}

@@ -1,21 +1,41 @@
 // JavaScript Document
 
-    
-$(document).ready(function(e) {
+$(document).on("pagecreate",function(){
+$('.logotipo').css({"width": $('#principal').width()*.28 , "height": 'auto'});
+});    
 
-//$('#logo').css({"width": $('#principal').width()/2, "height": "auto"});;	
+$(document).ready(function(e) {
 	
+	$("#muscia").click (function (){
+
+if ($('#muscia').hasClass('ui-icon-noaudio'))
+{
+	$('#muscia').removeClass('ui-icon-noaudio');
+	$('#muscia').addClass('ui-icon-audio');
+}
+else
+{
+		$('#muscia').removeClass('ui-icon-audio');
+	$('#muscia').addClass('ui-icon-noaudio');
+}
+
+
+	});
 $("#respuesta3").addClass("correcta");
 
 	var Respuestas=[];
 	var RespuestasO = ["","","",""]
+	var Preguntas=[];
+	var PreguntasO = ["","","","","","",""]
 	var Continuar = true;
 
 	
 	
-	$('#liga').click(function(){
+	$('.ligas').click(function(){
+		var x= $('#encabezado').css("height");
+
     $('html, body').animate({
-        scrollTop: $( $(this).attr('href') ).offset().top
+        scrollTop: $( $(this).attr('href') ).offset().top  - (parseInt(x, 10)*1.1)
     }, 700);
     return false;
 });
@@ -90,19 +110,29 @@ document.addEventListener( 'deviceready', function() {
 
 	db.transaction(function (tx) {
 		   tx.executeSql('INSERT INTO Usuario (Nombre) VALUES ("ICEon")');
-   tx.executeSql('INSERT INTO Preguntas (CvePregunta, Pregunta, R1, R2, R3, RC, Modulo) VALUES (1, "Que es HTML", "No se", "Super", "Lenguaje de programacion", "Hypertext Markup Lenguage", 3)');
+   tx.executeSql('INSERT INTO Preguntas (CvePregunta, Pregunta, R1, R2, R3, RC, Modulo) VALUES (1, "Es un tipo de caja de almacenamiento que se utiliza para recordar valores, de forma que éstos puedan utilizarse o modificarse más adelante en el programa.", "Caja de texto", "Esquema", "Operadores", "Variables", 1)');
+      tx.executeSql('INSERT INTO Preguntas (CvePregunta, Pregunta, R1, R2, R3, RC, Modulo) VALUES (2, "Nos ayuda a determinar la forma en que se puede dar solución a un problema.", "Diagrama de flujo", "Algoritmo", "Esquema", "Lógica computacional", 1)');
+	     tx.executeSql('INSERT INTO Preguntas (CvePregunta, Pregunta, R1, R2, R3, RC, Modulo) VALUES (3, "Conjunto de actividades formados por una serie de  instrucciones organizadas de forma lógica, que nos permiten resolver un problema.", "Compilación y errores", "Prueba de escritorio", "Diagrama de flujo", "Algoritmos", 1)');
+		    tx.executeSql('INSERT INTO Preguntas (CvePregunta, Pregunta, R1, R2, R3, RC, Modulo) VALUES (4, "¿Cuáles son características principales de un algoritmo?", "Compilación y errores", "Precisión y la compilación", "Transcripción", "Precisión, determinismo, finitud", 1)');
+			   tx.executeSql('INSERT INTO Preguntas (CvePregunta, Pregunta, R1, R2, R3, RC, Modulo) VALUES (5, "Es la comprobación de forma  lógica, de un algoritmo.", "Diagrama de flujo", "Transcripción", "Compilación y errores", "Prueba de escritorio", 1)');
+			      tx.executeSql('INSERT INTO Preguntas (CvePregunta, Pregunta, R1, R2, R3, RC, Modulo) VALUES (6, "En cada paso del algoritmo se determina de forma única el  siguiente paso. ¿A qué clasificación se refiere?", "Algoritmo no determinista", "Diagrama de flujo", "Esquema", "Algoritmo determinista", 1)');
+				     tx.executeSql('INSERT INTO Preguntas (CvePregunta, Pregunta, R1, R2, R3, RC, Modulo) VALUES (7, "Es el proceso a través del cual convertimos un algoritmo en un listado de instrucciones entendibles para la computadora.", "Diagrama de flujo", "Compilación", "Validación", "Transcripción", 1)');
 
 });
 
-$('#jugar').bind('click', function (){
+$('.jugart').bind('click', function (){
+
 	RespuestasO = ["","","",""];
+	PreguntasO = ["","","","","","",""];
+	
   db.transaction (function (ejecutar){
-	  alert('play');
    var sql = "SELECT * FROM Preguntas";
    ejecutar.executeSql (sql, undefined,
    function (ejecutar, resultado){
 
-//alert(resultado.rows.length);
+//for (var i = 0; i < 3; i++)
+alert(resultado.rows.length);
+
 
     if (resultado.rows.length)
      {
@@ -158,4 +188,6 @@ for (var i = 0; i < 3; i++)
   });
   
 });
+
+
 });
