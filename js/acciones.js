@@ -108,9 +108,9 @@ $(".correcta").click(function(){
  genera_pregunta(cuantas);  
 $('#pregunta p').text(Preguntas[cuantas]['preg']);
 $('#respuesta1').text(RespuestasO[0]);
-$('#respuesta2').text(RespuestasO[0]);
-$('#respuesta3').text(RespuestasO[0]);
-$('#respuesta4').text(RespuestasO[0]);
+$('#respuesta2').text(RespuestasO[1]);
+$('#respuesta3').text(RespuestasO[2]);
+$('#respuesta4').text(RespuestasO[3]);
  }
 	//sumar correctas
 	   //$('.resp').buttonMarkup({ icon: "delete" });
@@ -126,9 +126,9 @@ $('.resp').click(function(e){
  genera_pregunta(cuantas);  
 $('#pregunta p').text(Preguntas[cuantas]['preg']);
 $('#respuesta1').text(RespuestasO[0]);
-$('#respuesta2').text(RespuestasO[0]);
-$('#respuesta3').text(RespuestasO[0]);
-$('#respuesta4').text(RespuestasO[0]);
+$('#respuesta2').text(RespuestasO[1]);
+$('#respuesta3').text(RespuestasO[2]);
+$('#respuesta4').text(RespuestasO[3]);
  }
 });
 
@@ -227,9 +227,9 @@ for (var x = 0; x < resultado.rows.length ; x++)
 genera_pregunta(cuantas);  
 $('#pregunta p').text(Preguntas[cuantas]['preg']);
 $('#respuesta1').text(RespuestasO[0]);
-$('#respuesta2').text(RespuestasO[0]);
-$('#respuesta3').text(RespuestasO[0]);
-$('#respuesta4').text(RespuestasO[0]);
+$('#respuesta2').text(RespuestasO[1]);
+$('#respuesta3').text(RespuestasO[2]);
+$('#respuesta4').text(RespuestasO[3]);
 
     });
    });
