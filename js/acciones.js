@@ -10,7 +10,7 @@ function genera_pregunta(numero)
 {
       Respuestas [0] = Preguntas [numero]['resp1'];
 	  Respuestas [1] = Preguntas [numero]['resp2']
-	  Respuestas [2] = Preguntas [numero]['resp2']
+	  Respuestas [2] = Preguntas [numero]['resp3']
 	 
 	  
 	  var orden = Math.floor((Math.random() * 4) + 1) - 1;
@@ -62,8 +62,8 @@ else
 
 
 	});
-$("#respuesta3").addClass("correcta");
-    var cuantas = 0;
+
+    var cuantas ;
 	var Respuestas=[];
 	var RespuestasO = ["","","",""]
 	var Preguntas = [];
@@ -187,7 +187,7 @@ $('#respuesta1').text(Preguntas [0]['resp1']);
 $('#respuesta2').text(Preguntas [0]['resp2']);
 $('#respuesta3').text(Preguntas [0]['resp3']);
 $('#respuesta4').text(Preguntas [0]['respc']);	  
-/*genera_pregunta(cuantas);
+genera_pregunta(cuantas);
       var Res1 = RespuestasO[0];
       var Res2 = RespuestasO[1];
 	  var Res3 = RespuestasO[2];
@@ -195,7 +195,7 @@ $('#respuesta4').text(Preguntas [0]['respc']);
 	  alert (Res1);	  
 	  alert (Res2);
 	  alert (Res3);
-	  alert (Res4);*/
+	  alert (Res4);
 
     });
    });
