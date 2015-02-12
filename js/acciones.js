@@ -4,7 +4,7 @@ $(document).on("pagecreate",function(){
 $('.logotipo').css({"width": $('#principal').width()*.28 , "height": 'auto'});
 });    
 
-$(document).on("pageshow", "jugart", function (){
+$(document).on("pageshow", "jugar", function (){
 alert ("tiene s1 " + $('#respuesta1').hasClass('correcta'));
 		  	  alert ("tiene s2 " + $('#respuesta2').hasClass('correcta'));
 			  	  alert ("tiene s3 "+$('#respuesta3').hasClass('correcta'));
