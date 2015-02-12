@@ -4,6 +4,13 @@ $(document).on("pagecreate",function(){
 $('.logotipo').css({"width": $('#principal').width()*.28 , "height": 'auto'});
 });    
 
+$(document).on("pageshow", "jugart", function (){
+alert ("tiene s1 " + $('#respuesta1').hasClass('correcta'));
+		  	  alert ("tiene s2 " + $('#respuesta2').hasClass('correcta'));
+			  	  alert ("tiene s3 "+$('#respuesta3').hasClass('correcta'));
+				  	  alert ("tiene s4 "+$('#respuesta4').hasClass('correcta'));
+});
+
 $(document).ready(function(e) {
 
 function genera_pregunta(numero)
@@ -176,7 +183,7 @@ document.addEventListener( 'deviceready', function() {
       "Fecha NOT NULL)";
       transaction.executeSql (sql, undefined, function ()
        {
-        alert ("Tabla Creada 'Puntajes'");
+    //    alert ("Tabla Creada 'Puntajes'");
        }, error);
      });
 
@@ -186,7 +193,7 @@ document.addEventListener( 'deviceready', function() {
        "(Nombre)";
        transaction.executeSql (sql, undefined, function ()
         {
-         alert ("Tabla Creada 'Usuario'");
+  //       alert ("Tabla Creada 'Usuario'");
         }, error);
       });
 
@@ -203,7 +210,7 @@ document.addEventListener( 'deviceready', function() {
        "Modulo INTEGER NOT NULL)"
        transaction.executeSql (sql, undefined, function ()
         {
-         alert ("Tabla Creada");
+//         alert ("Tabla Creada");
         }, error);
       });
 
