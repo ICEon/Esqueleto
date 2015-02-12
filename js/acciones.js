@@ -5,6 +5,17 @@ $('.logotipo').css({"width": $('#principal').width()*.28 , "height": 'auto'});
 });    
 
 $(document).ready(function(e) {
+
+function question(cve,preg,resp1,resp2,resp3,respc)
+{
+ this.cve = cve;
+ this.preg = preg;
+ this.resp1 = resp1;
+ this.resp2 = resp2;
+ this.resp3 = resp3;
+  this.respc = respc;
+}
+
 	
 	$("#muscia").click (function (){
 
@@ -25,7 +36,7 @@ $("#respuesta3").addClass("correcta");
     var cuantas = 0;
 	var Respuestas=[];
 	var RespuestasO = ["","","",""]
-	var Preguntas=[];
+	var Preguntas = [];
 	var PreguntasO = ["","","","","","",""]
 	var Continuar = true;
 
@@ -129,19 +140,20 @@ $('.jugart').bind('click', function (){
    var sql = "SELECT * FROM Preguntas";
    ejecutar.executeSql (sql, undefined,
    function (ejecutar, resultado){
-
+ 
 
 for (var x = 0; x < resultado.rows.length ; x++)
 {
+	
 	var filaP = resultado.rows.item (x)
- var Preguntas = [ {
-    "clave" : filaP.CvePregunta,
-    "pregunta" : filaP.Pregunta,
-    "r1" : filaP.R1,
-    "r2" : filaP.R2,
-    "r3" : filaP.R3,
-    "rc" : filaP.RC
-}];	
+  Preguntas.push (new question(filaP.CvePregunta, filaP.Pregunta, filaP.R1, filaP.R2, filaP.R3, filaP.RC));
+ //( new question(filaP.CvePregunta,filaP.Pregunta, filaP.R1,filaP.R2, filaP.R3.);	
+
+
+
+
+
+
 }
 
 
