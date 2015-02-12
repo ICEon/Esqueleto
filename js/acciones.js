@@ -23,9 +23,9 @@ function genera_pregunta(numero)
 	  	  $('#respuesta2').removeClass('correcta');
 		  	  $('#respuesta3').removeClass('correcta');
 			  	  $('#respuesta4').removeClass('correcta');
-	alert (orden)			  
+	alert (orden)			  ;
 		switch(orden) {
-    case 0:
+    case '0':
 	alert ('0');
   	  $('#respuesta1').addClass('correcta');
         break;
