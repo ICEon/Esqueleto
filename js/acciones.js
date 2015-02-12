@@ -23,7 +23,7 @@ function genera_pregunta(numero)
 
 		switch(orden) {
     case 0:
-  	  $('#respuesta1').addClass('correcta');
+  	  
 	  alert ('1' + $('#respuesta1').hasClass('correcta'));
     break;
     case 1:
@@ -157,7 +157,8 @@ $('#respuesta4').text(RespuestasO[3]);
  }
 });
 
-
+$('#respuesta1').addClass('correcta' );
+alert ("fuera " + $('#respuesta1').hasClass('correcta'));
 //$('#R1').css('height', $('#respuesta').css('height'));
 document.addEventListener( 'deviceready', function() {
 
