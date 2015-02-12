@@ -129,7 +129,7 @@ if ($(this).hasClass('correcta'))
 	alert ("mal"); 
  }
  }
- if (cuantas <6)
+/* if (cuantas <6)
  {
  cuantas+=1;
  genera_pregunta(cuantas);  
@@ -142,7 +142,7 @@ $('#respuesta4').text(RespuestasO[3]);
  else
  {
 	alert ('Ya no hay más preguntas'); 
- }
+ }*/
 });
 
 $('#respuesta1').addClass('correcta');
