@@ -28,22 +28,22 @@ function genera_pregunta(numero)
 		switch(orden) {
     case 0:
   	  $('#respuesta1').addClass('correcta');  	  
-	  alert ('1' + $('#respuesta1').hasClass('correcta'));
+
     break;
     case 1:
 
   	  $('#respuesta2').addClass('correcta');
-	  	  alert ('2' + $('#respuesta1').hasClass('correcta'));
+
         break;
     case 2:
 
   	  $('#respuesta3').addClass('correcta');
-	  	  alert ('3' + $('#respuesta1').hasClass('correcta'));
+
         break;
     case 3:
 
   	  $('#respuesta4').addClass('correcta');
-	  	  alert ('4' + $('#respuesta1').hasClass('correcta'));
+
         break;
 }		  
 				  
@@ -113,38 +113,17 @@ else
     return false;
 });
 	
-$(".correcta p" ).click(function(){
-	alert ("correcto");
-	if (cuantas <= 6)
-	{
-	correctas = correctas+1;
-	$('#aciertos').text(correctas);
-	}
-	
-        if (cuantas <6)
- {
-	 
-	 
- cuantas+=1;
- genera_pregunta(cuantas);  
-$('#pregunta p').text(Preguntas[cuantas]['preg']);
-$('#respuesta1').text(RespuestasO[0]);
-$('#respuesta2').text(RespuestasO[1]);
-$('#respuesta3').text(RespuestasO[2]);
-$('#respuesta4').text(RespuestasO[3]);
- }
-else
-{
-	alert ('Ya no hay más preguntas'); 	
-}
-	//sumar correctas
-	   //$('.resp').buttonMarkup({ icon: "delete" });
-	    //$(this).buttonMarkup({ icon: "check" });
-	
-});
 
 $('.resp').click(function(e){
- $(".correcta").css('background-color', '#87D658');
+// $(".correcta").css('background-color', '#87D658');
+ if (cuantas <=6)
+ {
+if ($(this).hasClass('correcta'))
+ {
+  correctas+=1;
+  $('#aciertos').text(correctas);
+ }
+ }
  if (cuantas <6)
  {
  cuantas+=1;
