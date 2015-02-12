@@ -113,7 +113,7 @@ else
     return false;
 });
 	
-$(".correcta").click(function(){
+$(".correcta p" ).click(function(){
 	alert ("correcto");
 	if (cuantas <= 6)
 	{
