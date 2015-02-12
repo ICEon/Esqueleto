@@ -8,6 +8,8 @@ $(document).ready(function(e) {
 
 function genera_pregunta(numero)
 {
+	RespuestasO = ["","","",""]
+	
       Respuestas [0] = Preguntas [numero]['resp1'];
 	  Respuestas [1] = Preguntas [numero]['resp2']
 	  Respuestas [2] = Preguntas [numero]['resp3']
