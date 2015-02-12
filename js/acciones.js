@@ -18,31 +18,34 @@ function genera_pregunta(numero)
 	  var orden = Math.floor((Math.random() * 4) + 1) - 1;
 
 	  RespuestasO [orden] = Preguntas [numero]['respc'];
-  	  $('#respuesta1').removeClass('correcta');  	  	  
-	    	  $('#respuesta2').removeClass('correcta');  	  	  
-			    	  $('#respuesta3').removeClass('correcta');  	  	  
-					    	  $('#respuesta4').removeClass('correcta');  	  	  
+  	  $('#respuesta1').addClass('correcta');
+  	  $('#respuesta2').addClass('correcta');
+  	  $('#respuesta3').addClass('correcta');
+  	  $('#respuesta4').addClass('correcta');
 							  
 
 
 		switch(orden) {
     case 0:
-  	  $('#respuesta1').addClass('correcta');  	  
-
+  	  $('#respuesta2').removeClass('correcta');  	  
+  	  $('#respuesta3').removeClass('correcta');  	  
+   	  $('#respuesta4').removeClass('correcta');  	  
     break;
     case 1:
-
-  	  $('#respuesta2').addClass('correcta');
-
+  	  $('#respuesta1').removeClass('correcta');  	  
+  	  $('#respuesta3').removeClass('correcta');  	  
+   	  $('#respuesta4').removeClass('correcta');  	  
         break;
     case 2:
-
-  	  $('#respuesta3').addClass('correcta');
-
+  	  $('#respuesta2').removeClass('correcta');  	  
+  	  $('#respuesta1').removeClass('correcta');  	  
+   	  $('#respuesta4').removeClass('correcta');  	  
         break;
     case 3:
 
-  	  $('#respuesta4').addClass('correcta');
+  	  $('#respuesta2').removeClass('correcta');  	  
+  	  $('#respuesta3').removeClass('correcta');  	  
+   	  $('#respuesta1').removeClass('correcta');  	  
 
         break;
 }		  
