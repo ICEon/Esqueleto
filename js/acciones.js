@@ -23,17 +23,22 @@ function genera_pregunta(numero)
 	  	  $('#respuesta2').removeClass('correcta');
 		  	  $('#respuesta3').removeClass('correcta');
 			  	  $('#respuesta4').removeClass('correcta');
+	alert (orden)			  
 		switch(orden) {
     case 0:
+	alert ('0');
   	  $('#respuesta1').addClass('correcta');
         break;
     case 1:
+		alert ('1');
   	  $('#respuesta2').addClass('correcta');
         break;
     case 2:
+		alert ('2');
   	  $('#respuesta3').addClass('correcta');
         break;
     case 3:
+		alert ('3');
   	  $('#respuesta4').addClass('correcta');
         break;
 }		  
@@ -105,10 +110,11 @@ else
 });
 	
 $(".correcta").click(function(){
+	alert ("correcto");
 	if (cuantas <= 6)
 	{
 	correctas = correctas+1;
-	$('#aciertos').text(correctas)	;
+	$('#aciertos').text(correctas);
 	}
 	
         if (cuantas <6)
