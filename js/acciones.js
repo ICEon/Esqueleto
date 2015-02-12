@@ -18,12 +18,16 @@ function genera_pregunta(numero)
 	  var orden = Math.floor((Math.random() * 4) + 1) - 1;
 
 	  RespuestasO [orden] = Preguntas [numero]['respc'];
-	  
+  	  $('#respuesta1').removeClass('correcta');  	  	  
+	    	  $('#respuesta2').removeClass('correcta');  	  	  
+			    	  $('#respuesta3').removeClass('correcta');  	  	  
+					    	  $('#respuesta4').removeClass('correcta');  	  	  
+							  
 
 
 		switch(orden) {
     case 0:
-  	  
+  	  $('#respuesta1').addClass('correcta');  	  
 	  alert ('1' + $('#respuesta1').hasClass('correcta'));
     break;
     case 1:
@@ -140,7 +144,7 @@ else
 });
 
 $('.resp').click(function(e){
- 
+ $(".correcta").css('background-color', '#87D658');
  if (cuantas <6)
  {
  cuantas+=1;
@@ -157,7 +161,7 @@ $('#respuesta4').text(RespuestasO[3]);
  }
 });
 
-$('#respuesta1').addClass('correcta' );
+$('#respuesta1').addClass('correcta');
 alert ("fuera " + $('#respuesta1').hasClass('correcta'));
 //$('#R1').css('height', $('#respuesta').css('height'));
 document.addEventListener( 'deviceready', function() {
