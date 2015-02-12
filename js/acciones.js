@@ -91,6 +91,7 @@ else
 	var Preguntas = [];
 	var PreguntasO = ["","","","","","",""]
 	var Continuar = true;
+	var correctas = 0;
 
 	
 	
@@ -104,7 +105,37 @@ else
 });
 	
 $(".correcta").click(function(){
-        if (cuantas <5)
+	if (cuantas <= 6)
+	{
+	correctas = correctas+1;
+	$('#aciertos').text(correctas)	;
+	}
+	
+        if (cuantas <6)
+ {
+	 
+	 
+ cuantas+=1;
+ genera_pregunta(cuantas);  
+$('#pregunta p').text(Preguntas[cuantas]['preg']);
+$('#respuesta1').text(RespuestasO[0]);
+$('#respuesta2').text(RespuestasO[1]);
+$('#respuesta3').text(RespuestasO[2]);
+$('#respuesta4').text(RespuestasO[3]);
+ }
+else
+{
+	alert ('Ya no hay más preguntas'); 	
+}
+	//sumar correctas
+	   //$('.resp').buttonMarkup({ icon: "delete" });
+	    //$(this).buttonMarkup({ icon: "check" });
+	
+});
+
+$('.resp').click(function(e){
+ 
+ if (cuantas <6)
  {
  cuantas+=1;
  genera_pregunta(cuantas);  
@@ -114,23 +145,9 @@ $('#respuesta2').text(RespuestasO[1]);
 $('#respuesta3').text(RespuestasO[2]);
 $('#respuesta4').text(RespuestasO[3]);
  }
-	//sumar correctas
-	   //$('.resp').buttonMarkup({ icon: "delete" });
-	    //$(this).buttonMarkup({ icon: "check" });
-	
-});
-
-$('.resp').click(function(e){
- $(".correcta").css('background-color', '#87D658');
- if (cuantas <5)
+ else
  {
- cuantas+=1;
- genera_pregunta(cuantas);  
-$('#pregunta p').text(Preguntas[cuantas]['preg']);
-$('#respuesta1').text(RespuestasO[0]);
-$('#respuesta2').text(RespuestasO[1]);
-$('#respuesta3').text(RespuestasO[2]);
-$('#respuesta4').text(RespuestasO[3]);
+	alert ('Ya no hay más preguntas'); 
  }
 });
 
@@ -206,6 +223,7 @@ document.addEventListener( 'deviceready', function() {
 
 $('.jugart').bind('click', function (){
  cuantas = 0;
+ 	$('#aciertos').text('0');
 	RespuestasO = ["","","",""];
 
 	
