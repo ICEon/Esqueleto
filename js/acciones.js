@@ -157,8 +157,8 @@ for (var x = 0; x < resultado.rows.length ; x++)
 }
 
 
-      alert (Preguntas [0]['clave']);
-	        alert (Preguntas [0]['pregunta']);
+      alert (Preguntas [0]['cve']);
+	        alert (Preguntas [0]['preg']);
 	  
 /*      Respuestas [0] = fila.R1;
 	  Respuestas [1] = fila.R2;
