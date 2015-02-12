@@ -13,6 +13,10 @@ alert ("tiene s1 " + $('#respuesta1').hasClass('correcta'));
 
 $(document).ready(function(e) {
 
+$('a ').click(function ()
+{
+	alert ($(this).attr('class'));
+});
 function genera_pregunta(numero)
 {
 	RespuestasO = ["","","",""]
