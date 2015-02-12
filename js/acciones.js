@@ -19,13 +19,16 @@ function genera_pregunta(numero)
 
 	  RespuestasO [orden] = Preguntas [numero]['respc'];
   	  $('#respuesta1').addClass('correcta');
+	  alert ("tiene 1 ".$('#respuesta1').hasClass('correcta'));
   	  $('#respuesta2').addClass('correcta');
+	  	  alert ("tiene 2 ".$('#respuesta2').hasClass('correcta'));
   	  $('#respuesta3').addClass('correcta');
+	  alert ("tiene 3 ".$('#respuesta3').hasClass('correcta'));
   	  $('#respuesta4').addClass('correcta');
 							  
+	  alert ("tiene 4 ".$('#respuesta4').hasClass('correcta'));
 
-
-		switch(orden) {
+		switch (orden) {
     case 0:
   	  $('#respuesta2').removeClass('correcta');  	  
   	  $('#respuesta3').removeClass('correcta');  	  
@@ -50,7 +53,11 @@ function genera_pregunta(numero)
         break;
 }		  
 				  
-	  
+	  	  alert ("tiene d1 ".$('#respuesta1').hasClass('correcta'));
+		  	  alert ("tiene d2 ".$('#respuesta2').hasClass('correcta'));
+			  	  alert ("tiene d3 ".$('#respuesta3').hasClass('correcta'));
+				  	  alert ("tiene d4 ".$('#respuesta4').hasClass('correcta'));
+					  
 for (var i = 0; i < 3; i++)
 {
   while (Continuar)
