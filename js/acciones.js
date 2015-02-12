@@ -20,23 +20,26 @@ function genera_pregunta(numero)
 	  RespuestasO [orden] = Preguntas [numero]['respc'];
 	  
 
-	alert ("oredn " + orden);
+
 		switch(orden) {
-    case '0':
-	alert ('0');
+    case 0:
   	  $('#respuesta1').addClass('correcta');
-        break;
+	  alert ('1' + $('#respuesta1').hasClass('correcta'));
+    break;
     case 1:
-		alert ('1');
+
   	  $('#respuesta2').addClass('correcta');
+	  	  alert ('2' + $('#respuesta1').hasClass('correcta'));
         break;
     case 2:
-		alert ('2');
+
   	  $('#respuesta3').addClass('correcta');
+	  	  alert ('3' + $('#respuesta1').hasClass('correcta'));
         break;
     case 3:
-		alert ('3');
+
   	  $('#respuesta4').addClass('correcta');
+	  	  alert ('4' + $('#respuesta1').hasClass('correcta'));
         break;
 }		  
 				  
