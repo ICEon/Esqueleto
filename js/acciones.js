@@ -22,7 +22,7 @@ else
 
 	});
 $("#respuesta3").addClass("correcta");
-
+    var cuantas = 0;
 	var Respuestas=[];
 	var RespuestasO = ["","","",""]
 	var Preguntas=[];
@@ -121,7 +121,7 @@ document.addEventListener( 'deviceready', function() {
 });
 
 $('.jugart').bind('click', function (){
-
+ cuantas = 0;
 	RespuestasO = ["","","",""];
 	PreguntasO = ["","","","","","",""];
 	
@@ -130,14 +130,25 @@ $('.jugart').bind('click', function (){
    ejecutar.executeSql (sql, undefined,
    function (ejecutar, resultado){
 
-//for (var i = 0; i < 3; i++)
-alert(resultado.rows.length);
+
+for (var x = 0; x < resultado.rows.length ; x++)
+{
+	var filaP = resultado.rows.item (x)
+ var Preguntas = [ {
+    "clave" : filaP.CvePregunta,
+    "pregunta" : filaP.Pregunta,
+    "r1" : filaP.R1,
+    "r2" : filaP.R2,
+    "r3" : filaP.R3,
+    "rc" : filaP.RC
+}];	
+}
 
 
-    if (resultado.rows.length)
-     {
-      var fila = resultado.rows.item (0);
-      Respuestas [0] = fila.R1;
+      alert (Preguntas [0]['clave']);
+	        alert (Preguntas [0]['pregunta']);
+	  
+/*      Respuestas [0] = fila.R1;
 	  Respuestas [1] = fila.R2;
 	  Respuestas [2] = fila.R3;
 	 
@@ -175,14 +186,14 @@ for (var i = 0; i < 3; i++)
       a_html += "<li>" + Res2 + "</li>";
       a_html += "<li>" + Res3 + "</li>";
       a_html += "<li>" + Res4 + "</li>";				  
-     }
+
 	 a_html += "</ul>";
 	 
 	 var $contenido = $("#preguntas");
      $contenido.append (a_html);
      var $ul = $contenido.find ("ul");
      $ul.listview ();
-	 alert (a_html);
+	 alert (a_html);*/
     });
    });
   });
@@ -191,3 +202,4 @@ for (var i = 0; i < 3; i++)
 
 
 });
+
