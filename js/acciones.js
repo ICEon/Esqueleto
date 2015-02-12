@@ -17,6 +17,26 @@ function genera_pregunta(numero)
 
 	  RespuestasO [orden] = Preguntas [numero]['respc'];
 	  
+	  $('#respuesta1').removeClass('correcta');
+	  	  $('#respuesta2').removeClass('correcta');
+		  	  $('#respuesta3').removeClass('correcta');
+			  	  $('#respuesta4').removeClass('correcta');
+		switch(orden) {
+    case 0:
+  	  $('#respuesta1').addClass('correcta');
+        break;
+    case 1:
+  	  $('#respuesta2').addClass('correcta');
+        break;
+    case 2:
+  	  $('#respuesta3').addClass('correcta');
+        break;
+    case 3:
+  	  $('#respuesta4').addClass('correcta');
+        break;
+}		  
+				  
+	  
 for (var i = 0; i < 3; i++)
 {
   while (Continuar)
@@ -82,13 +102,34 @@ else
 });
 	
 $(".correcta").click(function(){
-        //$('.resp').buttonMarkup({ icon: "delete" });
+        if (cuantas <5)
+ {
+ cuantas+=1;
+ genera_pregunta(cuantas);  
+$('#pregunta p').text(Preguntas[cuantas]['preg']);
+$('#respuesta1').text(RespuestasO[0]);
+$('#respuesta2').text(RespuestasO[0]);
+$('#respuesta3').text(RespuestasO[0]);
+$('#respuesta4').text(RespuestasO[0]);
+ }
+	//sumar correctas
+	   //$('.resp').buttonMarkup({ icon: "delete" });
 	    //$(this).buttonMarkup({ icon: "check" });
 	
 });
 
 $('.resp').click(function(e){
  $(".correcta").css('background-color', '#87D658');
+ if (cuantas <5)
+ {
+ cuantas+=1;
+ genera_pregunta(cuantas);  
+$('#pregunta p').text(Preguntas[cuantas]['preg']);
+$('#respuesta1').text(RespuestasO[0]);
+$('#respuesta2').text(RespuestasO[0]);
+$('#respuesta3').text(RespuestasO[0]);
+$('#respuesta4').text(RespuestasO[0]);
+ }
 });
 
 
@@ -182,20 +223,13 @@ for (var x = 0; x < resultado.rows.length ; x++)
 
 
 
-$('#pregunta p').text(Preguntas [0]['preg']);
-$('#respuesta1').text(Preguntas [0]['resp1']);
-$('#respuesta2').text(Preguntas [0]['resp2']);
-$('#respuesta3').text(Preguntas [0]['resp3']);
-$('#respuesta4').text(Preguntas [0]['respc']);	  
-genera_pregunta(cuantas);
-      var Res1 = RespuestasO[0];
-      var Res2 = RespuestasO[1];
-	  var Res3 = RespuestasO[2];
-      var Res4 = RespuestasO[3];
-	  alert (Res1);	  
-	  alert (Res2);
-	  alert (Res3);
-	  alert (Res4);
+	  
+genera_pregunta(cuantas);  
+$('#pregunta p').text(Preguntas[cuantas]['preg']);
+$('#respuesta1').text(RespuestasO[0]);
+$('#respuesta2').text(RespuestasO[0]);
+$('#respuesta3').text(RespuestasO[0]);
+$('#respuesta4').text(RespuestasO[0]);
 
     });
    });
