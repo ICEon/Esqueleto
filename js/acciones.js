@@ -117,11 +117,16 @@ else
 $('.resp').click(function(e){
 // $(".correcta").css('background-color', '#87D658');
  if (cuantas <=6)
- {
+ { alert (correctas);
+   alert ("this " + $(this).hasClass('correcta'));
 if ($(this).hasClass('correcta'))
  {
   correctas+=1;
   $('#aciertos').text(correctas);
+ }
+ else
+ {
+	alert ("mal"); 
  }
  }
  if (cuantas <6)
